@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="container mx-auto">
+    <h1 class="">POKEMON</h1>
+    <div class="card-container">
+      <% for (const pokemon of shuffleList) { %>
+        <div class="card w-[200px] h-[130px] border border-sky-500">
+          <p>
+            <%= pokemon.name %>
+          </p>
+          <img src="<%= pokemon.image %>" />
+        </div>
+        <% } %>
+    </div>
+  </div>
+</body>
+
+</html>
