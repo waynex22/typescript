@@ -2,8 +2,8 @@ import express, { Router } from 'express';
 import GameController from "../controller/Game.Controller";
 
 
-const gameRouter: Router = express.Router();
+const router: Router = express.Router();
 
-gameRouter.get('/play', GameController.main);
+router.get('/play', GameController.main);
 
-export default gameRouter;
+export default router;
