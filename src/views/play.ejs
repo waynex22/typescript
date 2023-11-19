@@ -13,29 +13,83 @@
 
 </head>
 
-<body class=" bg-black">
+<body>
+  
   <div class="container">
-    <div class="mt-20 text-[40px]">
-      <span id="L">P</span>
-      <span id="I">O</span>
-      <span id="G">K</span>
-      <span id="H">E</span>
-      <span id="T">M</span>
-      <span id="T">O</span>
-      <span id="G">N</span>
+    <div class="flex justify-start items-center">
+      <div>
+        <div class="boder border-spacing-1 border-white">
+          <h2 class="text-xl text-white font-semibold">Lever <%=level - 1%>
+          </h2>
+        </div>
+        <div>
+          <p class=" text-white">Player: <%=player%>
+          </p>
+        </div>
+        <div class="mt-10">
+          <a href="/play">
+            <button class="glow-on-sm" type="submit">Restart</button>
+          </a>
+          <a href="/">
+            <button class="glow-on-sm" type="submit">Set New Name</button>
+          </a>
+        </div>
+      </div>
+      <div class="mt-20 ml-20 text-[40px]">
+        <span id="L">P</span>
+        <span id="I">O</span>
+        <span id="G">K</span>
+        <span id="H">E</span>
+        <span id="T">M</span>
+        <span id="T">O</span>
+        <span id="G">N</span>
+      </div>
+      <div class="ml-20 mt-6">
+        <div class="clock">
+          <div class="hours">
+            <div class="first">
+              <div class="number">0</div>
+            </div>
+            <div class="second">
+              <div class="number">0</div>
+            </div>
+          </div>
+          <div class="tick">:</div>
+          <div class="minutes">
+            <div class="first">
+              <div class="number">0</div>
+            </div>
+            <div class="second">
+              <div class="number">0</div>
+            </div>
+          </div>
+          <div class="tick">:</div>
+          <div class="seconds">
+            <div class="first">
+              <div class="number">0</div>
+            </div>
+            <div class="second infinite">
+              <div class="number">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="grid grid-cols-6 gap-3 mt-20">
       <% for (const pokemon of shuffleList) { %>
-        <div class="w-[150px] h-[200px]  rounded-xl card">
-          <div class=" card-item h-full w-full items-center flex justify-center" onclick="chooseCard(this)">
-            <img class="card-poke z-[-1]" src="<%= pokemon.image %>"
-              data-id="<%= pokemon.id %>" />
+        <div class="w-[150px] h-[200px]  card">
+          <div class=" card-item h-full rounded-sm w-full items-center flex justify-center" onclick="chooseCard(this)">
+            <img class="card-poke  z-[-1]" src="<%= pokemon.image %>" data-id="<%= pokemon.id %>" />
           </div>
         </div>
         <% } %>
     </div>
+
   </div>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <input type="hidden" name="level" value="<%= level %>">
+  <div id="timer"></div>
   <script src="/index.js"></script>
 </body>
+
 </html>

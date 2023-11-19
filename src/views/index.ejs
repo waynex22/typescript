@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body >
+    <div class="flex flex-col justify-center items-center">
+    <div class="mt-20 text-[40px]">
+        <span id="L">P</span>
+        <span id="I">O</span>
+        <span id="G">K</span>
+        <span id="H">E</span>
+        <span id="T">M</span>
+        <span id="T">O</span>
+        <span id="G">N</span>
+      </div>
+    <form action="/login" method="post">
+        <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+            <div class="relative">
+                <input autocomplete="off" id="name" name="name" type="text"
+                    class="peer placeholder-transparent bg-transparent"
+                    placeholder=" Enter your name" />
+                <label for="name"
+                    class="absolute left-0 -top-3.5 ml-4 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-200 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-xl">your name</label>
+            </div>
+
+            <div class="relative">
+                <button class="glow-on-hover" type="submit">ENTER TO GAME</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

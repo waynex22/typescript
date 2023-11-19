@@ -1,7 +1,174 @@
 :root {
     --white: #f1f1f1
 }
+.clock {
+    height: 12vh;
+    color: #fff;
+    font-size: 5vh;
+    font-family: sans-serif;
+    line-height: 18vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .clock::before, .clock::after {
+    content: '';
+    width: 3ch;
+    height: 10vh;
+    background: linear-gradient(to top, transparent, rgb(0, 0, 0));
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .clock::after {
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, black);
+  }
+  
+  .clock > div {
+    display: flex;
+  }
+  
+  .tick {
+    line-height: 17vh;
+  }
 
+  .tick-hidden {
+    opacity: 0;
+  }
+  
+  .move {
+    animation: move linear 1s infinite;
+  }
+  
+  @keyframes move {
+    from {
+      transform: translateY(0vh);
+    }
+    to {
+      transform: translateY(-20vh);
+    }
+  }
+  
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.glow-on-sm {
+    width: 120px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-sm:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-sm:active {
+    color: #000
+}
+
+.glow-on-sm:active:after {
+    background: transparent;
+}
+
+.glow-on-sm:before {
+    opacity: 1;
+}
+
+.glow-on-sm:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
 body {
     margin: 0;
     font-family: Montserrat;
@@ -307,10 +474,13 @@ div>span {
     background-image:url('https://upload.wikimedia.org/wikipedia/vi/3/3b/Pokemon_Trading_Card_Game_cardback.jpg');
     background-position: center;
     background-size: cover;
-    transition: transform 0.5s;
+    transition: transform 0.4s;
 }
 .card-item.flip {
     transform: rotateY(180deg);
+  }
+  .card-item.flipBack {
+    transform: rotateY(0deg);
   }
 .card-item:before,
 .card-item:after {
@@ -318,8 +488,8 @@ div>span {
     position: absolute;
     left: -2px;
     top: -2px;
-    background: linear-gradient(45deg, #000000, #ffffff, #000000, #363636, #000000, #020101,
-            #000000, #000000, #ffffff, #000000);
+    background: linear-gradient(45deg, #000000, #ffffff, #000000, #7c7b7b, #000000, #acacac,
+            #000000, #888787, #554f4f, #303030);
     background-size: 400%;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
@@ -345,10 +515,5 @@ div>span {
 }
 
 .card-item:after {
-    filter: blur(2px);
+    filter: blur(4px);
 }
-/* .card-item {
-    background-image:url('https://upload.wikimedia.org/wikipedia/vi/3/3b/Pokemon_Trading_Card_Game_cardback.jpg');
-    background-position: center;
-    background-size: cover;
-} */
