@@ -299,29 +299,37 @@ div>span {
     }
 }
 
-.card {
+.card-item {
     position: relative;
     margin: 30px 20px 0;
     width: 500px;
     height: 250px;
-    background: linear-gradient(0deg, #000, #272727);
+    background-image:url('https://upload.wikimedia.org/wikipedia/vi/3/3b/Pokemon_Trading_Card_Game_cardback.jpg');
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
 }
-
-.card:before,
-.card:after {
+.card-item.flip {
+    transform: rotateY(180deg);
+  }
+.card-item:before,
+.card-item:after {
     content: '';
     position: absolute;
     left: -2px;
     top: -2px;
-    background: linear-gradient(45deg, #ffffff, #545454, #e8e5e5, #f6f5f5, #f0eeee, #eae8e8,
-            #ede4e4, #afa9a9, #f0ebeb, #b5aaaa);
+    background: linear-gradient(45deg, #000000, #ffffff, #000000, #363636, #000000, #020101,
+            #000000, #000000, #ffffff, #000000);
     background-size: 400%;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     z-index: -1;
     animation: steam 20s linear infinite;
 }
-
+.card-item.no-steam:before,
+.card-item.no-steam:after {
+  display: none;
+}
 @keyframes steam {
     0% {
         background-position: 0 0;
@@ -336,19 +344,11 @@ div>span {
     }
 }
 
-.card:after {
+.card-item:after {
     filter: blur(2px);
 }
-
-.flip {
-    transform: rotateY(180deg);
-}
-
-.card-img {
+/* .card-item {
+    background-image:url('https://upload.wikimedia.org/wikipedia/vi/3/3b/Pokemon_Trading_Card_Game_cardback.jpg');
     background-position: center;
     background-size: cover;
-    background-image: url('https://upload.wikimedia.org/wikipedia/vi/thumb/3/3b/Pokemon_Trading_Card_Game_cardback.jpg/220px-Pokemon_Trading_Card_Game_cardback.jpg');
-}
-.hidden {
-    display: none;
-}
+} */

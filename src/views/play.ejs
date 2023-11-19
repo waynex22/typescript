@@ -26,9 +26,9 @@
     </div>
     <div class="grid grid-cols-6 gap-3 mt-20">
       <% for (const pokemon of shuffleList) { %>
-        <div class="w-[150px] h-[200px] items-center flex justify-center rounded-xl card">
-          <div class=" card-item overflow-hidden" onclick="choose(this)" data-id="<%= pokemon.id %>">
-            <img class="card-poke object-contain w-[96px] h-[96px]" src="<%= pokemon.image %>"
+        <div class="w-[150px] h-[200px]  rounded-xl card">
+          <div class=" card-item h-full w-full items-center flex justify-center" onclick="chooseCard(this)">
+            <img class="card-poke z-[-1]" src="<%= pokemon.image %>"
               data-id="<%= pokemon.id %>" />
           </div>
         </div>
@@ -36,9 +36,6 @@
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="../gamePlay/index.ts"></script>
-  </body>
-<script>
-  
-</script>
+  <script src="/index.js"></script>
+</body>
 </html>

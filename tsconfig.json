@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
-      "target": "es6",
+      "target": "es2016",
       "module": "commonjs",
       "outDir": "./dist",
-      "rootDir": "./src",
+      "rootDir": "./src/gamePlay",
       "strict": true,
       "esModuleInterop": true,
       "types": ["jquery"]
     },
-    "include": ["src/**/*.ts"],
+    "include": ["src/gamePlay/*.ts"],
     "exclude": ["node_modules"]
   }
   
